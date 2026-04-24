@@ -41,9 +41,10 @@ Training was run for three values of λ — low, medium, and high — across 50 
 
 ## Gate Value Distribution
 
-> This section directly addresses the third required report item from the case study specification.
-
 The histogram below shows the distribution of final gate values — `sigmoid(gate_score)` — for all weights in the best model (λ=0.5) after 50 epochs of training.
+
+<img width="790" height="390" alt="image" src="https://github.com/user-attachments/assets/6f16f159-0427-41bf-a12c-0e3151df9f41" />
+
 
 ### How to Read This Plot
 
