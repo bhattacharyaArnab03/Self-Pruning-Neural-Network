@@ -261,12 +261,10 @@ Training was run for three values of λ — low, medium, and high — across 50 
 
 | Lambda (λ) | Setting | Test Accuracy (%) | Sparsity Level (%) |
 |:---:|:---:|:---:|:---:|
-| 0.1 | Low | — | — |
-| 0.5 | Medium (Best) | — | — |
-| 2.0 | High | — | — |
+| 0.1 | Low | 60.85 | 77.93 |
+| 0.5 | Medium (Best) | 60.31 | 84.99 |
+| 2.0 | High | 60.17 | 92.25 |
 
-> ⚠️ Replace the `—` values with your actual numbers from the Colab training output before submitting.
->
 > Sparsity Level = percentage of gates where `sigmoid(gate_score) < 0.5` after full training.
 
 ### Trade-off Analysis
@@ -297,22 +295,6 @@ The histogram below shows the distribution of final gate values — `sigmoid(gat
 | **Cluster near 1** | These gates are held up by the classification loss. Their weights are genuinely important for CIFAR-10 prediction and survived pruning pressure |
 | **Near-empty region in between** | Gates do not remain ambiguous — they commit to one side. This binary polarization is the hallmark of a successful self-pruning mechanism |
 
-### What a Successful Plot Shows
-
-```
-Count
-  │
-  █                                    ██
-  █                                    ██
-  █                                    ██
-  █                                    ██
-  █─────────────────────────────────── ██──
-  0                 0.5                  1
-              Gate Value
-  ↑                                    ↑
-Large spike                       Active cluster
-(pruned weights)              (important weights)
-```
 
 A distribution centered around a single value (e.g., all gates at 0.73) indicates the sparsity gradient is too weak relative to the CE gradient and gates have not been pushed into a binary decision. The bimodal shape confirms the mechanism is working correctly.
 
