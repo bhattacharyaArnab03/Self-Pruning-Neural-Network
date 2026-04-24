@@ -285,7 +285,7 @@ The results confirm the expected inverse relationship: higher λ → more sparsi
 
 The histogram below shows the distribution of final gate values — `sigmoid(gate_score)` — for all weights in the best model (λ=0.5) after 50 epochs of training.
 
-![Gate Value Distribution — Best Model (λ=0.5)](gate_distribution.png)
+<img width="790" height="390" alt="image" src="https://github.com/user-attachments/assets/6f16f159-0427-41bf-a12c-0e3151df9f41" />
 
 ### How to Read This Plot
 
